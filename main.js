@@ -6,7 +6,6 @@ let inputDecimal = true;
 
 const calcKeys = Array.from(document.querySelectorAll('button'));
 document.addEventListener('keypress', event => {
-    console.log(event['key']);
     let key = event['key'];
     key = (key === '/') ? '÷' : key;
     key = (key === '*') ? '×' : key;
@@ -24,9 +23,9 @@ function updateDisplayValue(newValue){
         newValue = newValue.target.textContent;
     }
 
-    if (newValue == 'c'){
+    if (newValue == 'C'){
         displayValue = '';
-    }else if(newValue == '<'){
+    }else if(newValue == '←'){
         if (displayValue == ''){return;}
         if (operators.includes(displayValue.slice(-1))){
             inputOperator = true;
